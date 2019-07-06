@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	* {
+	  box-sizing: border-box;
+	}
+	body {
+		height: 100vh;
+	}
+	.container {
+		width: 100%;
+		height: 100%;
+		padding: 16px;
+	}
+	
+	.row {
+	    width: 100%;
+		height: 100%;
+	}
+	.row::after {
+	    content: "";
+		clear: both;
+		display: table;
+	}
+
+	[class*="col-"] {
+	   float: left;
+	   padding: 15px;
+	}
+
+	.card-image {
+		width: 100%;
+		height: 20%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	#card-left {
+	    position: relative;
+		height: 100%;
+		background-color: green;
+		text-align: center;
+		color: white;
+		padding: 10px;
+		font-size: 20px;
+	}
+	#card-right {
+		height: 100%;
+		text-align: center;
+
+	}
+	#card-left::before {
+		content: '';
+		width: 100%;
+		width: 0px;
+		height: 50px solid mediumvioletred;
+		border-right: 20px solid transparent;
+		border-left: 20px solid transparent;
+		border-bottom: 25px solid white;
+		transform: rotate(-90deg);
+		position: absolute;
+		top: 40%;
+		right: -8px;
+	}
+	#overload {
+		width: 100%;
+		height: 25%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin-top: 32px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		padding: 16px;
+	}
+	#overload p{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+	
+	.tooltip:hover .tooltiptext {
+		/*color: white; */
+		/* background-color: #383434; */
+		/* box-shadow: 0px 5px 15px 4px rgba(23, 1, 1, 0.3); */
+		visibility: visible;
+	}
+	
+	#tooltip-content {
+    position: relative;
+		height: 100%;
+		text-align: center;
+		border: 1px dotted red;
+	}
+	.tooltiptext {
+		position: absolute;
+		padding: 8px 16px;
+		background-color: green;
+		border-radius: 5px;
+		color: white;
+		font-size: 16px;
+		z-index: 2;
+		top: 60%;
+		visibility: hidden;
+		box-shadow: 4px 5px 10px 1px rgba(10, 8, 8, 0.2), 0 6px 20px 0 rgba(21, 20, 20, 0.19);
+	}
+
+	.common-menu {
+		width: 40%;
+		background-image: linear-gradient(to left bottom, #2ecc71, #16a085);
+	}
+	a {
+		text-decoration: none;
+    display: block;
+    color: white;
+	}
+	li.menu-content {
+    list-style-type: none;
+    border-bottom: 1px solid;
+    overflow: hidden;
+	}
+  .sub-menu {
+    background-color: #2c3e50;
+    padding: 0px 16px;
+    position: relative;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.3s;
+  }
+  /* .sub-menu:before { */
+  li.menu-content > a {
+    position: relative;
+  }
+  li.menu-content > a:before {
+    content: "";
+    width: 0;
+    border-bottom: 7px solid #22b67b;
+    border-top: 0;
+    border-left: 0;
+    z-index: 10;
+    position: absolute;
+    top: 37px;
+    left: 175px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transform: rotate(-180deg);
+    top: 34px;
+    left: 15px;
+  }
+  .sub-menu a {
+    position: relative;
+    padding: 8px 8px;
+  }
+  .sub-menu a:before {
+    content: "";
+    width: 6px;
+    position: absolute;
+    height: 100%;
+    background-color: wheat;
+    left: -16px;
+    top: 0px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .sub-menu a:hover:before {
+    opacity: 1;
+  }
+  .menu-content > a {
+    padding: 8px 16px;
+  }
+  .pr-8 {
+    padding-right: 8px;
+  }
+  .menu-content:target .sub-menu {
+    max-height: 10em;
+  }
+  
+	
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+	.text-white{
+		
+	}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+	<h1>Card</h1>
+	<div class="card-image">
+		<div class="row">
+			<div id="card-left" class="col-7"><h1 class="text-white">1</h1></div>
+			<div id="card-right" class="col-5">January 1, 2016</div>
+		</div>
+	</div>
+	
+	<h1>Text</h1>
+	<div id="overload">
+		<h1>Limit text length</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt rem odit quis quaerat. In dolorem praesentium velit ea esse consequuntur cum fugit sequi voluptas ut possimus voluptatibus deserunt nisi eveniet!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem voluptates vel dolorum autem ex repudiandae iste quasi. Minima explicabo qui necessitatibus porro nihil aliquid deleniti ullam repudiandae dolores corrupti eaque.</p>
+	</div>
+	
+	<h1>ToolTip</h1>
+	<div class="tooltip">
+		<div class="row">
+			<div id="tooltip-content" class="col-12">Hover over me!
+				<span class="tooltiptext">Tooltip text</span>
+			</div>
+		</div>
+	</div>
+	<h1>Menu</h1>
+	<div class="common-menu">
+		<div class="menu">
+			<li class="menu-content" id="profile">
+				<a href="#profile"><i class="fa fa-car pr-8"></i>Profile</a>
+				<div class="sub-menu">
+					<a href="#">User</a>
+					<a href="#">Edit</a>
+					<a href="#">Avatar</a>
+				</div>
+			</li>
+			<li class="menu-content" id="config">
+				<a href="#config"><i class="fa fa-car pr-8"></i>Config</a>
+				<div class="sub-menu">
+					<a href="#">User</a>
+					<a href="#">Edit</a>
+					<a href="#">Avatar</a>
+				</div>
+			</li>
+			<li class="menu-content" id="messages">
+				<a href="#messages"><i class="fa fa-car pr-8"></i>Messages</a>
+				<div class="sub-menu">
+					<a href="#">User</a>
+				</div>
+			</li>
+			<li class="menu-content" id="setting">
+				<a href="#setting"><i class="fa fa-car pr-8"></i>Setting</a>
+				<div class="sub-menu">
+					<a href="#">User</a>
+					<a href="#">Edit</a>
+				</div>
+			</li>
+			<li class="menu-content" id="logout">
+				<a href="#logout"><i class="fa fa-car pr-8"></i>LogOut</a>
+			</li>
+		</div>
+	</div>
+</div>
+</body>
+
+
+
+</html>
