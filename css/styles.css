@@ -38,7 +38,7 @@ body {
 }
 .cv-container-cus {
     background-image: linear-gradient(to bottom right, #f3d4e6, #d5dff1, #def3f1);
-    padding: 30px 16px 30px 16px;
+    padding: 16px 16px 16px 16px;
 }
 .cv-section1-context {
     margin-bottom: 30px;
@@ -61,7 +61,6 @@ span.cv-inf-val {
 .cv-img-des {
     width: 100%; 
     height: 500px;
-    border-radius: 10px;
 }
 .cv-inf {
     text-align: left;
