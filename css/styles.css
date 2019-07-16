@@ -22,12 +22,11 @@ body {
     min-height: 200px;
 }
 .card-icon-user {
-    transition: 1s;
-    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    transition: 0.5s;
+    /* clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%); */
 }
 .card-info-user {
     padding: 16px;
-    display: none;
     transition: 1.5s;
 }
 .card-i:hover .card-info-user{
@@ -170,6 +169,9 @@ span.cv-inf-val {
 
 }
 
+.row {
+    width:100%;
+}
 
 .row::after {
     content: "";
@@ -216,6 +218,16 @@ span.cv-inf-val {
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
+    .col-none {
+        display: none;
+    }
+    .fl-center-xs {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
     .fl-right-xs {
         display: flex;
         flex-direction: row-reverse;
