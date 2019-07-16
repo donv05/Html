@@ -244,6 +244,7 @@ span.cv-inf-val {
     width: 100%;
     height: 417px;
     transition: 1s;
+    margin: 8px 0px;
 }
 /* animation */
 .card-img:hover {
