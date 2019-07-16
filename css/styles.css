@@ -182,10 +182,6 @@ span.cv-inf-val {
     float: left;
     padding: 8px;
   }
-/* For mobile phones: */
-/* [class*="col-"] {
-    width: 100%;
-} */
   
   @media only screen and (min-width: 576px) {
     /* For desktop: */
